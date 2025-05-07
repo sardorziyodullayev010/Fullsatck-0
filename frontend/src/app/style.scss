@@ -1,0 +1,156 @@
+@import '@/assets/styles/_globals.scss';
+
+.home-page {
+    padding-top: 80px;
+
+    .hero {
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+                    url('/images/hero-bg.jpg') center/cover;
+        padding: 8rem 0;
+        text-align: center;
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: $red-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: $light-gray;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+
+            .btn-primary {
+                background: $red-gradient;
+                color: $light;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(255, 86, 187, 0.3);
+                }
+            }
+
+            .btn-secondary {
+                background: transparent;
+                color: $light;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 600;
+                border: 2px solid $red;
+                transition: 0.3s ease;
+
+                &:hover {
+                    background: rgba(255, 86, 187, 0.1);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    .features {
+        padding: 6rem 0;
+        background: rgba(255, 255, 255, 0.02);
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            h3 {
+                color: $red;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: $light-gray;
+            }
+        }
+    }
+
+    .cta {
+        padding: 6rem 0;
+        text-align: center;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+                    url('/images/cta-bg.jpg') center/cover;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: $red-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: $light-gray;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: $red-gradient;
+            color: $light;
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(255, 86, 187, 0.3);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        .hero {
+            padding: 4rem 0;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .features, .cta {
+            padding: 3rem 0;
+        }
+    }
+}

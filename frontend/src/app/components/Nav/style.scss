@@ -1,0 +1,116 @@
+@import '@/assets/styles/_globals.scss';
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $light;
+        text-decoration: none;
+        background: $red-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: rgba(0, 0, 0, 0.95);
+            flex-direction: column;
+            padding: 2rem;
+            transition: 0.3s ease;
+
+            &.active {
+                left: 0;
+            }
+        }
+
+        .nav-link {
+            color: $light;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s ease;
+            position: relative;
+
+            &:hover {
+                color: $red;
+            }
+
+            &.active {
+                color: $red;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: $red-gradient;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+
+        @media (max-width: 768px) {
+            display: flex;
+        }
+
+        span {
+            width: 100%;
+            height: 3px;
+            background: $light;
+            transition: 0.3s ease;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+    }
+}

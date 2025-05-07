@@ -1,0 +1,229 @@
+@import '@/assets/styles/_globals.scss';
+
+// Неоновые цвета
+$neon-red: #ff0055;
+$neon-blue: #00a8ff;
+$neon-red-glow: rgba(255, 0, 85, 0.3);
+$neon-blue-glow: rgba(0, 168, 255, 0.3);
+
+.contact-page {
+    padding-top: 80px;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    min-height: 100vh;
+
+    .hero {
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+                    url('/images/contact-bg.jpg') center/cover;
+        padding: 8rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, $neon-red-glow, $neon-blue-glow);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: $neon-red;
+            text-shadow: 0 0 10px $neon-red-glow,
+                        0 0 20px $neon-red-glow,
+                        0 0 30px $neon-red-glow;
+            animation: neonPulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: $light;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    .contact-info {
+        padding: 6rem 0;
+        background: rgba(0, 0, 0, 0.5);
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, transparent, rgba(255, 0, 85, 0.1), transparent);
+                transform: translateX(-100%);
+                transition: transform 0.6s ease;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px $neon-red-glow;
+
+                &::before {
+                    transform: translateX(100%);
+                }
+            }
+
+            h3 {
+                color: $neon-blue;
+                margin-bottom: 1rem;
+                text-shadow: 0 0 5px $neon-blue-glow;
+            }
+
+            p {
+                color: $light;
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+
+    .contact-form {
+        padding: 6rem 0;
+
+        .form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px $neon-red-glow;
+
+            .form-group {
+                margin-bottom: 1.5rem;
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    color: $light;
+                    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+                }
+
+                input, textarea {
+                    width: 100%;
+                    padding: 0.8rem 1rem;
+                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    background: rgba(0, 0, 0, 0.3);
+                    color: $light;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $neon-red;
+                        box-shadow: 0 0 10px $neon-red-glow;
+                        background: rgba(0, 0, 0, 0.5);
+                    }
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.3);
+                    }
+                }
+            }
+
+            .btn-primary {
+                background: linear-gradient(45deg, $neon-red, $neon-blue);
+                color: $light;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-weight: 600;
+                width: 100%;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                border: none;
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                    transform: translateX(-100%);
+                    transition: transform 0.6s ease;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px $neon-red-glow;
+
+                    &::before {
+                        transform: translateX(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes neonPulse {
+    0% {
+        text-shadow: 0 0 10px $neon-red-glow,
+                     0 0 20px $neon-red-glow,
+                     0 0 30px $neon-red-glow;
+    }
+    50% {
+        text-shadow: 0 0 15px $neon-red-glow,
+                     0 0 25px $neon-red-glow,
+                     0 0 35px $neon-red-glow;
+    }
+    100% {
+        text-shadow: 0 0 10px $neon-red-glow,
+                     0 0 20px $neon-red-glow,
+                     0 0 30px $neon-red-glow;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        .hero {
+            padding: 4rem 0;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .contact-info, .contact-form {
+            padding: 3rem 0;
+        }
+    }
+} 
