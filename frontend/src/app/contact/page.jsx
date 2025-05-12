@@ -18,11 +18,11 @@ export default function Contact() {
                         <div className="contact-grid">
                             <div className="contact-card fade-in">
                                 <h3>Адрес</h3>
-                                <p>г. Москва, ул. Примерная, д. 123</p>
+                                <p>г. Узбекстан, ул. Алишер Навои, д. 123</p>
                             </div>
                             <div className="contact-card fade-in">
                                 <h3>Телефон</h3>
-                                <p>+7 (999) 123-45-67</p>
+                                <p>+998 77-057-06-65</p>
                             </div>
                             <div className="contact-card fade-in">
                                 <h3>Email</h3>

@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import "./style.scss"
 
+
 function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const pathname = usePathname()
@@ -20,7 +21,7 @@ function Nav() {
     return (
         <nav className="navbar">
             <div className="container">
-                <Link href="/" className="logo">NFT Marketplace</Link>
+                <Link href="/" className="logo">KI Cars</Link>
                 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     {navLinks.map((link) => (

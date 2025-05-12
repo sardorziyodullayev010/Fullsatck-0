@@ -1,4 +1,3 @@
-// Цветовая схема
 :root {
     // Light theme
     --primary-color: #e63946;
@@ -26,7 +25,6 @@
     --gradient: linear-gradient(135deg, #ff4d4d 0%, #ff6b6b 100%);
 }
 
-// Базовые стили
 * {
     margin: 0;
     padding: 0;
@@ -55,18 +53,17 @@ button {
     font-family: inherit;
 }
 
-// Утилиты
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
+// Utility classes
 .text-center {
     text-align: center;
 }
 
-// Отступы
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
@@ -79,7 +76,7 @@ button {
 .mt-4 { margin-top: 2rem; }
 .mt-5 { margin-top: 2.5rem; }
 
-// Анимации
+// Animations
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -95,136 +92,50 @@ button {
     animation: fadeIn 0.5s ease forwards;
 }
 
-// Медиа-запросы
+// Theme toggle button
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 1000;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+// Responsive
 @media (max-width: 768px) {
     .container {
         padding: 0 1.5rem;
     }
-}
 
-// Colors
-$dark: #0a0a0a;
-$light: #ffffff;
-$red: #ff56bb;
-$dark-gray: #333333;
-$light-gray: #cccccc;
+    .theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
 
-// Gradients
-$red-gradient: linear-gradient(45deg, #ff56bb, #ff8a56);
-
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-// Typography
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-// Links
-a {
-    color: $red;
-    text-decoration: none;
-    transition: 0.3s ease;
-
-    &:hover {
-        color: lighten($red, 10%);
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
-}
-
-// Buttons
-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-// Forms
-input, textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    color: $light;
-    font-size: 1rem;
-    transition: 0.3s ease;
-
-    &:focus {
-        outline: none;
-        border-color: $red;
-        box-shadow: 0 0 0 2px rgba(255, 86, 187, 0.2);
-    }
-
-    &::placeholder {
-        color: $dark-gray;
-    }
-}
-
-// Sections
-section {
-    padding: 5rem 0;
-}
-
-// Container
-.container {
-    @include container;
-}
-
-// Utility classes
-.text-center {
-    text-align: center;
-}
-
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mt-3 { margin-top: 3rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-
-// Animations
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
 } 

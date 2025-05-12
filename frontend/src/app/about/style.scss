@@ -1,86 +1,149 @@
-@import '@/assets/styles/_globals.scss';
+@import '../../assets/styles/_globals.scss';
 
 .about-page {
     padding-top: 80px;
 
     .hero {
-        background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
-                    url('/images/hero-bg.jpg') center/cover;
-        padding: 8rem 0;
-        text-align: center;
+        padding: 120px 0 60px;
+        background: var(--gradient);
+        color: white;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
 
         h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: $red-gradient;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
         p {
-            font-size: 1.5rem;
-            color: $light-gray;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
         }
     }
 
-    .features {
-        background: rgba(255, 255, 255, 0.02);
+    .mission {
         padding: 6rem 0;
+        background: var(--background);
 
-        .features-grid {
+        .mission-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s ease;
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
 
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            h3 {
-                color: $red;
-                margin-bottom: 1rem;
-            }
-
-            p {
-                color: $light-gray;
-            }
+        p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
         }
     }
 
     .team {
         padding: 6rem 0;
+        background: var(--card-bg);
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .team-member {
+            background: var(--background);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .member-info {
+                padding: 1.5rem;
+
+                h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    color: var(--text-color);
+                }
+
+                p {
+                    color: var(--light-text);
+                }
+            }
+        }
+    }
+
+    .values {
+        padding: 6rem 0;
+        background: var(--background);
+
+        h2 {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--card-bg);
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
 
             h3 {
-                color: $red;
-                margin-bottom: 0.5rem;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: var(--text-color);
             }
 
             p {
-                color: $light-gray;
+                color: var(--light-text);
             }
         }
     }
@@ -89,19 +152,23 @@
 @media (max-width: 768px) {
     .about-page {
         .hero {
-            padding: 4rem 0;
+            padding: 100px 0 60px;
 
             h1 {
                 font-size: 2.5rem;
             }
 
             p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
 
-        .features, .team {
-            padding: 3rem 0;
+        .mission, .team, .values {
+            padding: 4rem 0;
+
+            h2 {
+                font-size: 2rem;
+            }
         }
     }
 } 
