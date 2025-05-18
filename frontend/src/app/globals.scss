@@ -1,11 +1,13 @@
 :root {
-    // Light theme
-    --primary-color: #e63946;
-    --accent-color: #ff4d4d;
+    --primary-color: #ff0000;
+    --secondary-color: #0066ff;
+    --accent-color: #ffcc00;
+    --background-color: #000;
+    --text-color: #fff;
+    --light-text: #ccc;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
     --background: #ffffff;
-    --card-bg: #f8f9fa;
-    --text-color: #1d3557;
-    --light-text: #6c757d;
     --card-border: rgba(0, 0, 0, 0.1);
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -31,26 +33,12 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background: var(--background);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-family: inherit;
 }
 
 .container {
@@ -59,7 +47,70 @@ button {
     padding: 0 1rem;
 }
 
-// Utility classes
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+
+    &.btn-red {
+        background-color: var(--primary-color);
+        color: #fff;
+        &:hover {
+            background-color: #cc0000;
+        }
+    }
+
+    &.btn-white {
+        background-color: #fff;
+        color: #000;
+        &:hover {
+            background-color: #ccc;
+        }
+    }
+
+    &.btn-blue {
+        background-color: var(--secondary-color);
+        color: #fff;
+        &:hover {
+            background-color: #0052cc;
+        }
+    }
+
+    &.btn-yellow {
+        background-color: var(--accent-color);
+        color: #000;
+        &:hover {
+            background-color: #e6b800;
+        }
+    }
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
 .text-center {
     text-align: center;
 }
@@ -68,13 +119,17 @@ button {
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
 .mb-4 { margin-bottom: 2rem; }
-.mb-5 { margin-bottom: 2.5rem; }
 
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
-.mt-5 { margin-top: 2.5rem; }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
 
 // Animations
 @keyframes fadeIn {
@@ -121,12 +176,7 @@ button {
     }
 }
 
-// Responsive
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1.5rem;
-    }
-
     .theme-toggle {
         bottom: 1.5rem;
         right: 1.5rem;

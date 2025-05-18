@@ -6,8 +6,8 @@ import ThemeToggle from '../components/ThemeToggle';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'KI Cars',
-    description: 'KI Cars - Ваш надежный партнер в мире автомобилей',
+    title: 'CryptoExchange',
+    description: 'Торговая платформа для криптовалют',
 };
 
 export default function RootLayout({

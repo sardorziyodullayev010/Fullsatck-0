@@ -3,59 +3,75 @@ import "./style.scss"
 
 export default function Home() {
     return (
-        <>
+        <div className="home-page">
             <Nav />
-            <main className="home-page">
-                <section className="hero">
-                    <div className="container">
-                        <h1 className="fade-in">Добро пожаловать в KI Cars</h1>
-                        <div className="hero-content">
-                            <div className="hero-text">
-                                <h2>Kia Sorento 2024</h2>
-                                <p>Современный кроссовер с передовыми технологиями и комфортом</p>
-                                <ul>
-                                    <li>Мощный двигатель 2.5L Turbo</li>
-                                    <li>Полный привод AWD</li>
-                                    <li>Премиальный интерьер</li>
-                                    <li>Передовые системы безопасности</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="hero-buttons fade-in">
-                            <a href="/auth/register" className="btn-primary">Начать</a>
-                            <a href="/about" className="btn-secondary">Узнать больше</a>
-                        </div>
+            <section className="hero">
+                <div className="container">
+                    <h1>Криптовалютная платформа будущего</h1>
+                    <p>Безопасная торговля и инвестиции в цифровые активы</p>
+                    <div className="cta-buttons">
+                        <button className="btn btn-red">Начать торговлю</button>
+                        <button className="btn btn-blue">Узнать больше</button>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="features">
-                    <div className="container">
-                        <h2 className="text-center mb-3">Почему выбирают нас</h2>
-                        <div className="features-grid">
-                            <div className="feature-card fade-in">
-                                <h3>Гарантия качества</h3>
-                                <p>Официальная гарантия производителя на все автомобили</p>
-                            </div>
-                            <div className="feature-card fade-in">
-                                <h3>Профессионализм</h3>
-                                <p>Опытные специалисты и сертифицированный сервис</p>
-                            </div>
-                            <div className="feature-card fade-in">
-                                <h3>Выгодные условия</h3>
-                                <p>Гибкие программы кредитования и специальные предложения</p>
-                            </div>
+            <section className="features">
+                <div className="container">
+                    <h2>Почему выбирают нас</h2>
+                    <div className="features-grid">
+                        <div className="feature-card">
+                            <h3>Безопасность</h3>
+                            <p>Многоуровневая система защиты ваших активов</p>
+                            <button className="btn btn-yellow">Подробнее</button>
+                        </div>
+                        <div className="feature-card">
+                            <h3>Низкие комиссии</h3>
+                            <p>Минимальные комиссии за торговые операции</p>
+                            <button className="btn btn-white">Подробнее</button>
+                        </div>
+                        <div className="feature-card">
+                            <h3>Поддержка 24/7</h3>
+                            <p>Профессиональная команда всегда на связи</p>
+                            <button className="btn btn-red">Подробнее</button>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="cta">
-                    <div className="container">
-                        <h2>Готовы начать?</h2>
-                        <p>Присоединяйтесь к нашему сообществу прямо сейчас</p>
-                        <a href="/auth/register" className="btn-primary">Зарегистрироваться</a>
+            <section className="crypto-stats">
+                <div className="container">
+                    <h2>Популярные криптовалюты</h2>
+                    <div className="stats-grid">
+                        <div className="stat-card">
+                            <h3>Bitcoin (BTC)</h3>
+                            <p className="price">$45,000</p>
+                            <p className="change positive">+2.5%</p>
+                        </div>
+                        <div className="stat-card">
+                            <h3>Ethereum (ETH)</h3>
+                            <p className="price">$3,200</p>
+                            <p className="change positive">+1.8%</p>
+                        </div>
+                        <div className="stat-card">
+                            <h3>Binance Coin (BNB)</h3>
+                            <p className="price">$420</p>
+                            <p className="change negative">-0.5%</p>
+                        </div>
                     </div>
-                </section>
-            </main>
-        </>
+                </div>
+            </section>
+
+            <section className="newsletter">
+                <div className="container">
+                    <h2>Будьте в курсе событий</h2>
+                    <p>Подпишитесь на нашу рассылку для получения последних новостей и аналитики</p>
+                    <form className="newsletter-form">
+                        <input type="email" placeholder="Ваш email" />
+                        <button className="btn btn-blue">Подписаться</button>
+                    </form>
+                </div>
+            </section>
+        </div>
     )
 }

@@ -2,12 +2,12 @@
 import { useState } from "react"
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { toast } from "react-toastify"
-import { auth } from "@/firebase/config"
+import { auth } from "../../../firebase/config"
 import Link from "next/link"
 import "../style.scss"
 import { useRouter } from 'next/navigation'
 import { FcGoogle } from "react-icons/fc"
-import { setSessionCookie } from "@/utils/cookies"
+import { setSessionCookie } from "../../../utils/cookies"
 
 function Login() {
     const [formData, setFormData] = useState({

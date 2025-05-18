@@ -1,29 +1,29 @@
 // Цветовая схема
 :root {
     // Light theme
-    --primary-color: #e63946;
-    --accent-color: #ff4d4d;
-    --background: #ffffff;
-    --card-bg: #f8f9fa;
-    --text-color: #1d3557;
-    --light-text: #6c757d;
+    --primary-color: #6366F1;
+    --accent-color: #10B981;
+    --background: #F5F7FA;
+    --card-bg: #FFFFFF;
+    --text-color: #1F2937;
+    --light-text: #6B7280;
     --card-border: rgba(0, 0, 0, 0.1);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --gradient: linear-gradient(135deg, #e63946 0%, #ff4d4d 100%);
+    --gradient: linear-gradient(135deg, #6366F1 0%, #10B981 100%);
 }
 
 [data-theme="dark"] {
-    --primary-color: #ff4d4d;
-    --accent-color: #ff6b6b;
-    --background: #1a1a1a;
-    --card-bg: #2d2d2d;
-    --text-color: #ffffff;
-    --light-text: #b3b3b3;
+    --primary-color: #6366F1;
+    --accent-color: #10B981;
+    --background: #1F2937;
+    --card-bg: #374151;
+    --text-color: #F5F7FA;
+    --light-text: #9CA3AF;
     --card-border: rgba(255, 255, 255, 0.1);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
-    --gradient: linear-gradient(135deg, #ff4d4d 0%, #ff6b6b 100%);
+    --gradient: linear-gradient(135deg, #6366F1 0%, #10B981 100%);
 }
 
 // Базовые стили
@@ -103,14 +103,15 @@ button {
 }
 
 // Colors
-$dark: #0a0a0a;
-$light: #ffffff;
-$red: #ff56bb;
-$dark-gray: #333333;
-$light-gray: #cccccc;
+$dark: #1F2937;
+$light: #F5F7FA;
+$primary: #6366F1;
+$accent: #10B981;
+$dark-gray: #6B7280;
+$light-gray: #9CA3AF;
 
 // Gradients
-$red-gradient: linear-gradient(45deg, #ff56bb, #ff8a56);
+$primary-gradient: linear-gradient(135deg, #6366F1, #10B981);
 
 // Mixins
 @mixin flex-center {
@@ -152,12 +153,12 @@ p {
 
 // Links
 a {
-    color: $red;
+    color: $primary;
     text-decoration: none;
     transition: 0.3s ease;
 
     &:hover {
-        color: lighten($red, 10%);
+        color: lighten($primary, 10%);
     }
 }
 
@@ -182,8 +183,8 @@ input, textarea {
 
     &:focus {
         outline: none;
-        border-color: $red;
-        box-shadow: 0 0 0 2px rgba(255, 86, 187, 0.2);
+        border-color: $accent;
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
     }
 
     &::placeholder {

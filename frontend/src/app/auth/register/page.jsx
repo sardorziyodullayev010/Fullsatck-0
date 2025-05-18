@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
-import { auth } from "@/firebase/config"
+import { auth } from "../../../firebase/config"
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
 import "../style.scss"

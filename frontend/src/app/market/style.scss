@@ -1,0 +1,213 @@
+.market-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding-top: 80px;
+
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/market-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        text-align: center;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+    }
+
+    .market-overview {
+        padding: 60px 0;
+        background-color: #111;
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+
+            .stat-card {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 2rem;
+                border-radius: 10px;
+                text-align: center;
+
+                h3 {
+                    color: #ccc;
+                    margin-bottom: 1rem;
+                    font-size: 1.1rem;
+                }
+
+                .value {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: #fff;
+                    margin-bottom: 0.5rem;
+                }
+
+                .change {
+                    &.positive {
+                        color: #00ff00;
+                    }
+                    &.negative {
+                        color: #ff0000;
+                    }
+                }
+            }
+        }
+    }
+
+    .crypto-list {
+        padding: 60px 0;
+        background-color: #000;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .crypto-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+
+            .table-header {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.1);
+                font-weight: bold;
+
+                .col {
+                    padding: 0 1rem;
+                }
+            }
+
+            .table-row {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.05);
+                }
+
+                .col {
+                    padding: 0 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    &.positive {
+                        color: #00ff00;
+                    }
+                    &.negative {
+                        color: #ff0000;
+                    }
+                }
+
+                .crypto-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                    }
+
+                    h4 {
+                        margin: 0;
+                        font-size: 1rem;
+                    }
+
+                    span {
+                        color: #ccc;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .market-news {
+        padding: 60px 0;
+        background-color: #111;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+
+            .news-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                overflow: hidden;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                .news-image {
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .news-content {
+                    padding: 1.5rem;
+
+                    h3 {
+                        margin-bottom: 1rem;
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        color: #ccc;
+                        margin-bottom: 1rem;
+                        font-size: 0.9rem;
+                    }
+
+                    .date {
+                        color: #666;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .market-page {
+        .crypto-table {
+            .table-header, .table-row {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+
+            .col:nth-child(4), .col:nth-child(5) {
+                display: none;
+            }
+        }
+    }
+} 
