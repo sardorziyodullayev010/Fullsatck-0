@@ -1,12 +1,12 @@
 "use client"
 
-import Nav from "@/components/Nav"
+import Navigation from "@/components/Navigation"
 import "./style.scss"
 
 export default function Contacts() {
     return (
         <main className="contacts-page">
-            <Nav />
+            <Navigation />
             <div className="hero">
                 <div className="hero-content">
                     <h1>Свяжитесь с нами</h1>
