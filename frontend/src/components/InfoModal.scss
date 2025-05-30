@@ -1,0 +1,141 @@
+.info-modal {
+    .modal-content {
+        max-width: 600px;
+        width: 90%;
+    }
+
+    .info-content {
+        h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+
+            li {
+                padding: 0.5rem 0;
+                padding-left: 1.5rem;
+                position: relative;
+
+                &:before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    color: #4CAF50;
+                }
+            }
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+    }
+
+    .fees-table {
+        margin: 1.5rem 0;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+
+        .fee-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: #f9f9f9;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                &:first-child {
+                    color: #333;
+                }
+
+                &:last-child {
+                    font-weight: 500;
+                    color: #2196F3;
+                }
+            }
+        }
+    }
+
+    .support-channels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+
+        .channel {
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+
+            h4 {
+                color: #333;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: #666;
+                font-size: 0.9rem;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Темная тема
+[data-theme="dark"] {
+    .info-modal {
+        .info-content {
+            h3 {
+                color: #fff;
+            }
+
+            p {
+                color: #ccc;
+            }
+        }
+
+        .fees-table {
+            border-color: #333;
+
+            .fee-row {
+                border-color: #333;
+                background: #1a1a1a;
+
+                span {
+                    &:first-child {
+                        color: #fff;
+                    }
+
+                    &:last-child {
+                        color: #64B5F6;
+                    }
+                }
+            }
+        }
+
+        .support-channels {
+            .channel {
+                background: #1a1a1a;
+
+                h4 {
+                    color: #fff;
+                }
+
+                p {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+} 

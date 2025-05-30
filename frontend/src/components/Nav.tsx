@@ -1,24 +1,28 @@
+'use client'
+
+import React from 'react'
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 import './Nav.scss'
 
-const Nav = () => {
+const Nav: React.FC = () => {
     return (
-        <nav className="main-nav">
+        <nav className="nav">
             <div className="container">
-                <Link href="/" className="logo">
-                    KIA Marketplace
-                </Link>
-                <ul className="nav-links">
-                    <li>
+                <div className="nav-content">
+                    <Link href="/" className="logo">
+                        CryptoExchange
+                    </Link>
+                    
+                    <div className="nav-links">
                         <Link href="/">Главная</Link>
-                    </li>
-                    <li>
-                        <Link href="/marketplace">Маркетплейс</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact">Контакты</Link>
-                    </li>
-                </ul>
+                        <Link href="/market">Рынок</Link>
+                        <Link href="/contacts">Контакты</Link>
+                        <Link href="/login" className="btn btn-blue">Войти</Link>
+                        <Link href="/register" className="btn btn-red">Регистрация</Link>
+                        <ThemeToggle />
+                    </div>
+                </div>
             </div>
         </nav>
     )

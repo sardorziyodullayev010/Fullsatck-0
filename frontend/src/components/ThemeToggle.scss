@@ -1,0 +1,33 @@
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+
+    &:hover {
+        background: var(--shadow-color);
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+[data-theme="dark"] {
+    .theme-toggle {
+        color: #fff;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+} 

@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import React, { useEffect, useState } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
+import './ThemeToggle.scss';
 
-export default function ThemeToggle() {
+const ThemeToggle: React.FC = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     useEffect(() => {
@@ -22,8 +23,14 @@ export default function ThemeToggle() {
     };
 
     return (
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === 'light' ? <FiMoon /> : <FiSun />}
+        <button 
+            className="theme-toggle" 
+            onClick={toggleTheme}
+            aria-label={`Переключить на ${theme === 'light' ? 'тёмную' : 'светлую'} тему`}
+        >
+            {theme === 'light' ? <FaMoon /> : <FaSun />}
         </button>
     );
-} 
+};
+
+export default ThemeToggle; 
