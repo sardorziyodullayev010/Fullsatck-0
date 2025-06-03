@@ -58,7 +58,7 @@ export default function About() {
                         </div>
                         <div className="team-member">
                             <div className="member-info">
-                                <h3>Дмитрий Сидоров</h3>
+                                <h3>Алексей Кузнецов</h3>
                                 <p>Lead Developer</p>
                             </div>
                         </div>
