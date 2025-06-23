@@ -67,7 +67,7 @@ export default function About() {
             </section>
 
             <section className="values">
-                <div className="container">
+                <div className="container"> 
                     <h2>Наши преимущества</h2>
                     <div className="values-grid">
                         <div className="value-card">
@@ -88,3 +88,4 @@ export default function About() {
         </div>
     )
 }
+expor
